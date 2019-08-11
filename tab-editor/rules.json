@@ -1,0 +1,67 @@
+{
+  "start": [
+    {
+      "token": "keyword",
+      "regex": "^---\\s*$",
+      "next": "yaml-start"
+    }, {
+      "token": "function.open",
+      "regex": "^[A-G]\\d?[b#]?\\s?"
+    }, {
+      "token": "function.open",
+      "regex": "\\|[A-G]\\d?[b#\\s]?"
+    }, {
+      "token": "function.instrument",
+      "regex": "^I[A-F\\d][0-7\\s]?"
+    }, {
+      "token": "function.instrument",
+      "regex": "\\|I[A-F\\d][0-7\\s]?"
+    }, {
+      "token": "keyword",
+      "regex": "\\|[-*]",
+      "next": "measure"
+    }, {
+      "token": "keyword",
+      "regex": "^[-*]",
+      "next": "measure"
+    }, {
+      "token": "comment",
+      "regex": "#.*$"
+    }
+  ],
+  "measure": [
+    {
+      "token": "keyword",
+      "regex": "\\|[-*]",
+      "next": "measure"
+    }, {
+      "token": "variable.parameter",
+      "regex": "[A-Z\\d]"
+    }, {
+      "token": "storage.type",
+      "regex": "[a-z]"
+    }, {
+      "token": "string",
+      "regex": "-"
+    }, {
+      "token": "keyword",
+      "regex": "\\|$",
+      "next": "start"
+    }, {
+      "token": "keyword",
+      "regex": "\\|\\s",
+      "next": "start"
+    }, {
+      "token": "keyword",
+      "regex": "[^-a-zA-Z\\d*~=_]",
+      "next": "start"
+    }
+  ],
+  "yaml": [
+    {
+      "token": "keyword",
+      "regex": "^---\\s*$",
+      "next": "start"
+    }
+  ]
+}

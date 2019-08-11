@@ -1,0 +1,91 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 2 2">
+    <style>
+        #logo {
+            width: 200px;
+        }
+        @keyframes path {
+            from {
+                fill: white;
+            }
+            to {
+                fill: black:
+            }
+        }
+        @keyframes horizontal {
+            0% {
+                fill: #AAA;
+                d: path("M 0 2 v 0.268 h 2 v -0.268 z");
+            }
+            50% {
+                fill: #333;
+                d: path("M 0 0 v 0.268 h 2 v -0.268 z");
+            }
+            100% {
+                fill: black;
+                d: path("M 0 0.268 v 0.268 h 2 v -0.268 z");
+            }
+        }
+        @keyframes vertical {
+            0% {
+                fill: #AAA;
+                d: path("M -0.268 0.268 V 2 h 0.268 V 0.268 z");
+            }
+            50% {
+                fill: #555;
+                d: path("M 2 0.268 V 2 h 0.268 V 0.268 z");
+            }
+            100% {
+                fill: black;
+                d: path("M 1 0.268 V 2 h 0.268 V 0.268 z");
+            }
+
+        }
+        @keyframes triangle {
+            from {
+                fill: white;
+                transform: translate(0.5px, 0.5px) scale(0.5, 0.5);
+                /* d: path("m 1,2 a 10 10 0,0,0 1 -1.732 a 10 10 0,0,0 -2 0 a 10 10 0,0,0 1 1.732 z"); */
+                d: path("m 1,2 \
+                    a 10 10 1,0,0 1 -1.732 \
+                    a 10 10 1,0,0 -2 0 \
+                    a 10 10 1,0,0 1 1.732 \
+                    z");
+            }
+            to {
+                fill: #8E24AA;
+                transform: scale(1, 1);
+                d: path("m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z");
+            }
+        }
+        #horizontal {
+            <!-- fill: black; -->
+            d: path("M 0 0.268 v 0.268 h 2 v -0.268 z");
+        }
+        #vertical {
+            fill: black;
+            d: path("M 1 0.268 V 2 h 0.268 V 0.268 z");
+        }
+        #triangle {
+            fill: #8E24AA;
+            mask: url(#t);
+            d: path("m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z");
+        }
+        #logo:hover #horizontal {
+            animation: horizontal 2s ease forwards infinite alternate;
+        }
+        #logo:hover #vertical {
+            animation: vertical 2s ease forwards infinite alternate;
+        }
+        #logo:hover #triangle {
+            animation: triangle 2s ease forwards infinite alternate;
+        }
+    </style>
+    <path id="triangle"></path>
+    <defs>
+        <mask id="t">
+            <rect fill="white" height="100%" width="100%"></rect>
+            <path id="horizontal"></path>
+            <path id="vertical"></path>
+        </mask>
+    </defs>
+</svg>

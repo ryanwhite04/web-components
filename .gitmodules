@@ -1,0 +1,6 @@
+[submodule "stop-watch"]
+	path = stop-watch
+	url = /home/ryanwhite04/web-components/stop-watch
+[submodule "mine-sweeper"]
+	path = mine-sweeper
+	url = /home/ryanwhite04/web-components/mine-sweeper

@@ -1,0 +1,122 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../app-storage/app-localstorage/app-localstorage-document.html">
+<link rel='import' href="../paper-input/paper-input.html">
+<link rel='import' href="../paper-icon-button/paper-icon-button.html">
+<link rel='import' href="../iron-icon/iron-icon.html">
+<link rel='import' href="../iron-icons/iron-icons.html">
+<link rel="import" href="../polymerfire/polymerfire.html">
+
+<dom-module id="flash-data">
+  <template>
+    <style>
+    </style>
+    <pre>user:  [[stringify(user)]]</pre>
+    <pre>decks: [[stringify(decks)]]</pre>
+    <pre>notes: [[stringify(notes)]]</pre>
+    <pre>users: [[stringify(users)]]</pre>
+    <pre>project: [[project]]</pre>
+    <pre>messaging sender ID: [[messagingSenderId]]</pre>
+    <pre>API Key: [[apiKey]]</pre>
+    <firebase-app id="app"
+      auth-domain="[[project]].firebaseapp.com"
+      storage-bucket="[[project]].appspot.com"
+      database-url="https://[[project]].firebaseio.com"
+      api-key="[[apiKey]]"
+      messaging-sender-id="[[messagingSenderId]]"
+    ></firebase-app>
+    <firebase-auth id="auth"
+      user="{{user}}"
+      on-error="handleError"
+    ></firebase-auth>
+    <firebase-document
+      path="/cards"
+      data="{{cards}}"
+    ></firebase-document>
+    <firebase-document
+      path="/decks"
+      data="{{decks}}"
+    ></firebase-document>
+    <firebase-document
+      path="/notes"
+      data="{{notes}}"
+    ></firebase-document>
+    <firebase-document
+      path="/users/[[user.uid]]"
+      data="{{userData}}"
+    ></firebase-document>
+    <paper-input type="email" required label="Email">
+      <iron-icon icon="mail" slot="prefix"></iron-icon>
+      <paper-icon-button slot="suffix" onclick="clearInput()" icon="clear" alt="clear" title="clear">
+      </paper-icon-button>
+    </paper-input>
+    <paper-input type="password" minlength="8" required label="Password">
+      <iron-icon icon="lock" slot="prefix"></iron-icon>
+    </paper-input>
+    
+    <!--<app-localstorage-document key="{{title}}" data="{{state}}"></app-localstorage-document>-->
+  </template>
+  <script>
+    /**
+     * `flash-data`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FlashData extends Polymer.Element {
+      
+      static get is() {
+        return 'flash-data';
+      }
+      
+      static get properties() {
+        return {
+          project: {
+            type: String,
+          },
+          
+          apiKey: {
+            type: String,
+          },
+          
+          messageSenderId: {
+            type: String,
+          },
+        };
+      }
+      
+      static get observers() {
+        return [
+          'projectChanged(project)',
+        ];
+      }
+      
+      ready() {
+        super.ready();
+        console.log('ready', this)
+      }
+      
+      stringify(object) {
+        return JSON.stringify(object);
+      }
+      
+      signInWithPopup() {
+        console.log('signInWithPopup', { node: this })
+        return this.$.auth.signInWithPopup().then(console.log, console.log)
+      }
+      
+      projectChanged(project) {
+        console.log('projectChanged', { project })
+      }
+      
+      handleError(e) {
+        console.log('handleError', e);
+      }
+      
+    }
+    
+    window.customElements.define(FlashData.is, FlashData);
+  </script>
+</dom-module>

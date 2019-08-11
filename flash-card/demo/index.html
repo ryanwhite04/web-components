@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>flash-card demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../iron-icons/iron-icons.html">
+    <link rel="import" href="../flash-card.html">
+    <link rel="import" href="../flash-deck.html">
+    <link rel="import" href="../flash-data.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          background-color: #e5e5e5;
+        }
+        flash-card {
+          margin: 24px;
+        }
+      </style>
+    </custom-style>
+
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      
+      <h3>Basic flash-card demo</h3>
+      <demo-snippet>
+        <template>
+          
+          <flash-card>
+            <p slot="question">What is 4 squared</p>
+            <p slot="solution">16</p>
+            <p slot="hint">Ends with a 6</p>
+            <p slot="link">Even</p>
+          </flash-card>
+        
+          <flash-card
+            names='["Hint", "Question", "Solution"]'
+            note='["No, do it yourself!", "Capital of Australia", "Canberra"]'
+          >
+            <div>
+              This is a card
+            </div>
+            <input slot="actions" type="text">
+          </flash-card>
+        </template>
+      </demo-snippet>
+      
+      <h3>Simple flash-deck</h3>
+      <demo-snippet>
+        <template>
+          <flash-deck title="Example" count="3">
+            <flash-card slot="cards" score="1">
+              <p slot="question">What is 4 squared</p>
+              <p slot="solution">16</p>
+              <p slot="hint">Ends with a 6</p>
+              <p slot="link">Even</p>
+            </flash-card>
+            <flash-card slot="cards" score="1">
+              <p slot="question">What is 3 squared</p>
+              <p slot="solution">9</p>
+              <p slot="link">Odd</p>
+            </flash-card>
+            <flash-card slot="cards" score="1">
+              <p slot="question">What is 2 squared</p>
+              <p slot="solution">4</p>
+              <p slot="hint">Square root of 16</p>
+              <p slot="link">Even</p>
+            </flash-card>
+            <flash-card slot="cards" score="0.5">
+              <p slot="question">What is 1 squared</p>
+              <p slot="solution">1</p>
+              <p slot="hint">Only 1 other</p>
+              <p slot="link">Odd</p>
+            </flash-card>
+          </flash-deck>
+        </template>
+      </demo-snippet>
+      
+      <h3>Loaded flash-deck</h3>
+      <demo-snippet>
+        <template>
+          <dom-bind>
+            <template>
+              <iron-ajax auto
+                url="../decks/ELEC5501.json"
+                handle-as="json"
+                last-response="{{response}}"
+                on-response="handleResponse"
+                debounce-duration="300">
+              </iron-ajax>
+              <flash-deck title="[[response.title]]" notes="[[response.notes]]" count="3">
+                <!--<template slot="cards" is="dom-repeat" items="[[response.notes]]" as="note">-->
+                <!--  <flash-card>-->
+                <!--    <p slot="question">What is 1 squared</p>-->
+                <!--    <p slot="solution">1</p>-->
+                <!--    <p slot="hint">Only 1 other</p>-->
+                <!--    <p slot="link">Odd</p>-->
+                <!--  </flash-card>-->
+                <!--</template>-->
+              </flash-deck>
+            </template>
+          </dom-bind>
+        </template>
+      </demo-snippet>
+
+      <!--<h3>Firebase flash-deck</h3>-->
+      <!--<demo-snippet>-->
+      <!--  <template>-->
+      <!--    <dom-bind>-->
+      <!--      <template>-->
+      <!--        <flash-data project="notes-f0b38"></flash-data>-->
+      <!--        <flash-deck-->
+      <!--          title="{{data.title}}"-->
+      <!--          notes="{{data.notes}}"-->
+      <!--          count="3"-->
+      <!--        ></flash-deck>-->
+      <!--      </template>-->
+      <!--    </dom-bind>-->
+      <!--  </template>-->
+      <!--</demo-snippet>-->
+      
+    </div>
+  </body>
+</html>

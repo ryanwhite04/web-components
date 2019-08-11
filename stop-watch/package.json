@@ -1,0 +1,29 @@
+{
+  "name": "stop-watch",
+  "version": "1.0.0",
+  "main": "dist/cjs.js",
+  "module": "dist/esm.js",
+  "license": "MIT",
+  "author": "Ryan White <ryanwhite04@gmail.com>",
+  "installConfig": {
+    "pnp": true
+  },
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "dependencies": {
+    "@material/mwc-button": "^0.3.4",
+    "@material/mwc-fab": "^0.3.4",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/lit-element": "^0.6.5",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/paper-fab": "^3.0.1"
+  },
+  "devDependencies": {
+    "@pika/web": "^0.4.4",
+    "rollup": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-pnp-resolve": "^1.0.1"
+  }
+}

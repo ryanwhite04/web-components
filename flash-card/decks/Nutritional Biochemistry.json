@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "title": "Nutritional Biochemistry",
+  "updates": [],
+  "owner": "Ryan White",
+  "notes": [
+    ["3 types of eicosanoids?", "Prostaglandins, thromboxanes, leukotrienes", 12 ],
+    ["1 primary function of eicosanoids", "Plays a role in immune function by regulating inflammation.", 12 ],
+    ["2 Secondary eicosanoid functions", "Regulation of smooth muscle contraction, increase water and sodium excretion, acts as modulators of physiological functions.", 12],
+    ["2 enzymes which participate in the conversion of arachidonic acid?", "5-Lipoxygenase, COX 1", 12],
+    ["2 end products of arachidonic acid via cyclooxygenase pathway?", "Thromboxane and prostaglandins", "Both ecosanoids", 12],
+    ["6 arachidonic acid inhibitors? ", [
+      "Ginger",
+      "Vitamin E",
+      "PGE 1",
+      "PGE 3",
+      "DHA",
+      "EPA"
+    ], 12],
+    ["2 prostaglandin series 2 inhibitors?", "Garlic (allicin), ginger (gingerol)", 12],
+    ["2 detrimental effects of excessive thromboxane A2?", [
+      "Clot formation (thrombosis)",
+      "bronchoconstriction"
+    ], "detrimental", 12],
+    ["3 substances which inhibit thromboxane A2?", "EPA, Garlic (allicin), Turmeric (curcumin)", 12]
+  ]
+}

@@ -1,0 +1,19 @@
+<svg viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #t rect {
+      fill: white;
+    }
+    #t path {
+      fill: black;
+    }
+  </style>
+  <style></style>
+  <path fill="#8E24AA" mask="url(#t)" d="m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z"></path>
+  <defs>
+    <mask id="t">
+      <rect height="100%" width="100%"></rect>
+      <path d="M 0 0.268 v 0.268 h 2 v -0.268 z"></path>
+      <path d="M 1 0.268 V 2 h 0.268 V  0.268 z"></path>
+    </mask>
+  </defs>
+</svg>

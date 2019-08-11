@@ -1,0 +1,43 @@
+{
+  
+  # Templates for displaying a note
+  "cards": [
+    {
+      "value": [[object]],
+      "notes": { [[note.id]]: boolean },
+      "users": { [[user.id]]: boolean },
+    }
+  ],
+  
+  # Collections of notes, just the references
+  "decks": [
+    {
+      "value": [[object]],
+      "notes": { [[note.id]]: true },
+      "users": { [[user.id]]: [[rules]] },
+    }
+  ],
+  
+  # Images, Videos, Audio and so on
+  "media": [
+    {
+      "users": { [[user.id]]: true }
+    }
+  ],
+  
+  "notes": [
+    {
+      "value": [[array]],
+      "cards": { [[card.id]]: [[]]},
+      "decks": { },
+      "users": { [[user.id]]: [[rules]] }
+    },
+  ],
+  "users": [
+    {
+      "notes": { [[note.id]]: [[score]] },
+      "decks": { [[deck.id]]: [[rules]] },
+    },
+  ],
+  
+}

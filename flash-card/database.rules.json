@@ -1,0 +1,94 @@
+{
+  "rules": {
+    "users": {
+      "$user": {
+        ".read":  "$user === auth.uid",
+        ".write": "$user === auth.uid",
+        "cards": { ".validate": true },
+        "decks": { ".validate": true },
+        "files": { ".validate": true },
+        "notes": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    
+    "notes": {
+      "$note": {
+        ".read": true,
+        ".write": "auth != null",
+        "value": { ".validate": true },
+        "cards": { ".validate": true },
+        "decks": { ".validate": true },
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    
+    "views": {
+      "$view": {
+        ".read": true,
+        ".write": "auth != null",
+        "value": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    "cards": {
+      "$card": {
+        ".read": true,
+        ".write": "auth != null"
+      }
+    },
+    
+    "mnems": {
+      "$mnem": {
+        ".read": true,
+        ".write": "auth != null"
+      }
+    },
+    "links": {
+      "$link": {
+        ".read": true,
+        ".write": "auth != null",
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    "decks": {
+      "$deck": {
+        ".read": true,
+        ".write": "auth != null",
+        "value": { ".validate": true },
+        "notes": { ".validate": true },
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    
+    "files": {
+      "$file": {
+        ".read": true,
+        ".write": "auth != null",
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    
+    "flags": {
+      "$flag": {
+        ".read": true,
+        ".write": "auth != null",
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    },
+    
+    "stars": {
+      "$flag": {
+        ".read": true,
+        ".write": "auth != null",
+        "users": { ".validate": true },
+        "$else": { ".validate": false }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+
+
+
+# Commands
+
+A: Step A, [Octave(0, 9), Accidental(b, #, n)]
+B: Step B, [Octave(0, 9), Accidental(b, #, n)]
+C: Step C, [Octave(0, 9), Accidental(b, #, n)]
+D: Step D, [Octave(0, 9), Accidental(b, #, n)]
+E: Step E, [Octave(0, 9), Accidental(b, #, n)]
+F: Step F, [Octave(0, 9), Accidental(b, #, n)]
+G: Step G, [Octave(0, 9), Accidental(b, #, n)]
+H: 
+I: Instrument, [0-16], default is 0
+J: Jump # At the start of a new measure, how much to skip
+K: Key, for sheet music generation
+L: Label
+M: Move
+N: Next, Explicitly define next line, refer to label
+O: Offset
+P: Previous: Explicitly define previous line, refer to label
+Q: Queue
+R: Repeat
+S: Skip: how many times to skip this string (requires state). default is 0
+T: Transpose Notes: default is 0
+U: 
+V: Volume: default is 1
+W: 
+X: 
+Y: 
+Z: 
+
+Replace 2 digit numbers with Base 36
+
+Skips
+|[a-z-*=o]{0,3} : Optional padding at the beginning of a measure
+
+# Duration Legend
+W: Whole Note
+H: Half Note
+Q: Quarter Note
+E: 8th Note
+S: 16th Note
+T: 32nd Note
+X: 64th Note
+.: Dotted Note
+
+# Brush Guide
+U: Brush Up
+^: Brush Up
+D: Brush Down
+v: Brush Down
+
+# Finger Guide
+p: Pulgar/Thumb
+i: Indice/Index
+m: Medio/Middle
+a: Anular/Ring
+e: Mignolo/Pinky
+
+# Modifier Legend (Can be placed above the line too)
+a: Accentuate
+b: Bent Note
+c:
+d: Dead (Ghost) Note
+e:
+f: False (Ghost) Note
+g: Grace Note
+h: Hammered Note
+i:
+j:
+k:
+l: Homoglyph
+m: Mute Note
+n: Natural Harmonic Note
+o: Homoglyph (not used)
+p: Pulled Note
+q:
+r: Released note
+s: Slid (Glissando) Note
+t: Tied Note, L
+u: Unnatural Harmonic (Fretted, Artificial, Pinch) Note
+v: Vibrato Note, ~
+w:
+x: Mute/Dead/False/Ghost Note
+y: Strum Up
+z: Strum Down
+
+Slap
+Pop
+Pizzicato
+||: Default Cursor Position, End Song

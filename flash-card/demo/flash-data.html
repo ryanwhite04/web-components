@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>flash-card demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../flash-data.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          background-color: #e5e5e5;
+        }
+      </style>
+    </custom-style>
+
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+
+      <h3>Firebase flash-data</h3>
+      <demo-snippet>
+        <template>
+          <flash-data id="data"
+            project="notes-f0b38"
+            api-key="AIzaSyDJWmQ_4jH4kHPJtu00bzuRILPn-C9HObE"
+            messaging-sender-id="782690322588"
+          ></flash-data>
+        </template>
+      </demo-snippet>
+      
+    </div>
+  </body>
+</html>

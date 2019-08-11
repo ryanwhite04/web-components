@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>flash-card demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../iron-icons/iron-icons.html">
+    <link rel="import" href="../flash-card.html">
+    <link rel="import" href="../flash-deck.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          background-color: #e5e5e5;
+        }
+      </style>
+    </custom-style>
+
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <dom-bind>
+        <template>
+          <iron-ajax id="ajax"
+            auto
+            url="../decks/Nutritional Biochemistry.json"
+            handle-as="json"
+            last-response="{{response}}"
+            on-response="handleResponse"
+            debounce-duration="300">
+          </iron-ajax>
+          <flash-deck
+            title="[[response.title]]"
+            notes="[[response.notes]]"
+            count="3">
+          </flash-deck>
+        </template>
+      </dom-bind>
+    </div>
+  </body>
+</html>

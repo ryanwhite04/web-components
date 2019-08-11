@@ -1,0 +1,22 @@
+{
+  "name": "emoji-rain",
+  "version": "1.0.0",
+  "main": "dist/cjs.js",
+  "module": "dist/esm.js",
+  "license": "MIT",
+  "author": "Ryan White <ryanwhite04@gmail.com>",
+  "installConfig": {
+    "pnp": true
+  },
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.5"
+  },
+  "devDependencies": {
+    "rollup": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-pnp-resolve": "^1.0.1"
+  }
+}

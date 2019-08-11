@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      tab-editor:not(:defined) {
+        display: none;
+      }
+      tab-editor {
+        margin: 24px;
+      }
+      paper-toast {
+        --paper-toast-color: var(--paper-green-500);
+      }
+      paper-toast[error] {
+        --paper-toast-color: var(--paper-red-500);
+      }
+    </style>
+<!--     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.0/webcomponents-loader.js"></script> -->
+  </head>
+  <body>
+<!--     <script src="https://unpkg.com/@polymer/paper-toast@3.0.0-pre.21/paper-toast.js?module" type="module"></script> -->
+    <script src="index.js" type="module"></script>
+    <tab-editor src="./files/Gametabs/AriaRianata/Roxa's Theme.txt">Loading...</tab-editor>
+    <tab-editor src="./files/Gametabs/AriaRianata/Xion's Theme.txt">Loading...</tab-editor>
+    <tab-editor save="foo">foo bar</tab-editor>
+<!--     <paper-toast id="toast"></paper-toast> -->
+    <script type="module">
+//         [...document.getElementsByTagName('tab-editor')].forEach(listen(document.getElementById('toast')))
+
+        function listen(toast) {
+          return element => element.addEventListener('message', message(toast))
+        }
+
+        function message(toast) {
+          return ({ detail: { message, color }}) => {
+            console.log(message)
+            toast.text = message;
+            toast.open()
+          }
+        }
+    </script>
+  </body>
+</html>

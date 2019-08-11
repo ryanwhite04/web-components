@@ -1,0 +1,212 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../app-storage/app-localstorage/app-localstorage-document.html">
+<link rel="import" href="flash-card.html">
+
+<dom-module id="flash-deck">
+  <template>
+    <style>
+      :host  {
+        display: flex;
+        width: 50%;
+        height: 320px;
+        min-width: 320px;
+        max-width: 420px;
+        margin: auto;
+        position: relative;
+      }
+      ::slotted {
+      }
+      flash-card {
+        width: 100%;
+        /*height: 100%;*/
+        position: absolute;
+        /*{ @apply --shadow-elevation-4dp; }*/
+      }
+      flash-card:last-of-type {
+        { @apply --shadow-elevation-8dp; }
+      }
+    </style>
+    <!--<slot id="cards" name="cards" on-slotchange="">-->
+    <!--  <p>This deck currently has no cards.</p>-->
+    <!--</slot>-->
+    <template id="cards" is="dom-repeat" items="{{stack}}">
+      <flash-card index={{index}} note="{{item}}" score="{{item.score}}" on-pass="pass" on-fail="fail">
+        <p slot="question">[[item.question]]</p>
+        <p slot="solution">[[item.solution]]</p>
+      </flash-card>
+    </template>
+    <app-localstorage-document key="{{title}}" data="{{state}}"></app-localstorage-document>
+  </template>
+  <script>
+    /**
+     * `flash-deck`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FlashDeck extends Polymer.Element {
+      
+      static get is() {
+        return 'flash-deck';
+      }
+      
+      static get properties() {
+        return {
+          title: {
+            type: String,
+          },
+          notes: {
+            type: Array,
+          },
+          views: {
+            type: Array,
+          },
+          state: {
+            type: Array,
+          },
+          stack: {
+            type: Array,
+          },
+          count: {
+            type: Number,
+            value: 3,
+          },
+        };
+      }
+      
+      static get observers() {
+        return [
+          'titleChanged(title)',
+          'notesChanged(notes, title)',
+          'stateChanged(state)',
+          'stackChanged(stack)',
+          'scoreChanged(state.*)',
+        ];
+      }
+      
+      ready() {
+        super.ready();
+        console.log('ready', this)
+      }
+      
+      titleChanged(title) {
+        console.log('titleChanged', { title })
+      }
+      
+      notesChanged(notes, title) {
+        console.log('notesChanged', { notes, title }, this.get('state'))
+        this.get('state') || this.set('state', Array(notes.length).fill(1));
+      }
+      
+      // cardsChanged(e) {
+      //   console.log('cardsChanged', e, this.$.cards.assignedNodes())
+      // }
+      
+      stateChanged(state) {
+        console.log('stateChanged', { state });
+        this.set('stack', Array(this.get('count')).fill(-1)
+          .reduce(cards => [...cards, this.pick(cards).index], [])
+          .map(this.draw.bind(this)));
+      }
+      
+      stackChanged(stack) {
+        console.log('stackChanged', { stack });
+      }
+      
+      scoreChanged(score) {
+        console.log('scoreChanged', { score });
+      }
+
+      // Throws a card away, saves it's new score, and adds a new one to the stack
+      toss({ target, detail: { score, index } }) {
+        console.log('toss', { score, index });
+        target.animate([{
+          transform: 'translateX(0)',
+          opacity: 1,
+          easing: 'ease-out',
+        }, {
+          transform: score ? 'translateX(200%)' : 'translateX(-200%)',
+          opacity: 1,
+          easing: 'ease-in',
+        }], {
+          duration: 1500
+        }).onfinish = e => target.parentNode.prepend(target);
+        
+        this.set(['stack', this.save(index, score)].join('.'),
+          this.draw(this.pick(this.stack.map(({ index }) => index)).index)
+        );
+      }
+      
+      // Throws a card away, saves it's new score, and adds a new one to the stack
+      pass({ target, detail: { index } }) {
+        console.log('pass', { index });
+        target.animate([{
+          transform: 'translateX(0)',
+          opacity: 1,
+          easing: 'ease-out',
+        }, {
+          transform: 'translateX(200%)',
+          opacity: 1,
+          easing: 'ease-in',
+        }], {
+          duration: 1500
+        }).onfinish = e => target.parentNode.prepend(target);
+        
+        this.set(['stack', this.save(index, 0)].join('.'),
+          this.draw(this.pick(this.stack.map(({ index }) => index)).index)
+        );
+      }
+      
+      // Throws a card away, saves it's new score, and adds a new one to the stack
+      fail({ target, detail: { index } }) {
+        console.log('fail', { index });
+        target.animate([{
+          transform: 'translateX(0)',
+          opacity: 1,
+          easing: 'ease-out',
+        }, {
+          transform: 'translateX(-200%)',
+          opacity: 1,
+          easing: 'ease-in',
+        }], {
+          duration: 1e3
+        }).onfinish = e => target.parentNode.prepend(target);
+        
+        this.set(['stack', this.save(index, 1)].join('.'),
+          this.draw(this.pick(this.stack.map(({ index }) => index)).index)
+        );
+      }
+      
+      // Returns a function that chooses an index based on the state
+      pick(ignore = [], limit = Math.random(), random = false) {
+        console.log('pick', { ignore, limit });
+        return limit ? this.get('state')
+          .map((score, index) => ({ score, index }))
+          .filter(({ score, index }) => !ignore.includes(index))
+          .find(({ score, index }) => score > limit) ||
+            this.pick(ignore, limit / 2) : this.get('state')[0];
+      }
+      
+      // Returns a note based on the index supplied from the list of notes
+      draw(index) {
+        console.log('draw', { index });
+        let [question, solution, hint] = this.get(['notes', index]);
+        let score = this.get(['state', index]);
+        return { index, question, solution, hint, score };
+      }
+      
+      // Returns a new state with the score saved after answering a question
+      save(index, score) {
+        console.log('save', { index, score });
+        this.set(['state', index].join('.'), (this.state[index] + parseInt(score)) / 2);
+        return index;
+      }
+
+    }
+    
+    window.customElements.define(FlashDeck.is, FlashDeck);
+  </script>
+</dom-module>

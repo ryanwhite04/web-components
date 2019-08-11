@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* from https://developers.google.com/web/fundamentals/web-components/customelements#upgrades */
+      :not(:defined) {
+        display: none;
+      }
+      ace-editor {
+        height: 300px;
+        margin: 24px;
+      }
+    </style>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
+  </head>
+  <body>
+    <script type="module" src="ace-editor.js"></script>
+<!--     <ace-editor mode="text" theme="eclipse" indent>
+      This editor preserves indentation from the html
+        Tabs are kept though, only first level of indentation is removed
+    </ace-editor> -->
+    <ace-editor mode="javascript" theme="cobalt">
+      function doSomething() {
+        doAnotherThing();
+        return;
+      }
+    </ace-editor>
+<!--     <ace-editor alt wrap>
+      In this tab
+      The alt key mode is always on
+      Try dragging the cursor through some lines.
+    </ace-editor>
+    <ace-editor id="commands">
+      This one has some special commands
+    </ace-editor> -->
+<!--     <ace-editor placeholder="This is a placeholder"></ace-editor> -->
+    <script>
+      [...document.getElementsByTagName('ace-editor')].map(editor => [
+        'ready',
+        'change',
+      ].map(event => editor.addEventListener(event, console.log)))
+      
+      const commands = [{
+          name: 'toggle',
+          exec: console.log,
+          bindKey: { win: 'Alt-Enter', mac: 'Alt-Enter' },
+        }, {
+          name: 'download',
+          exec: console.log,
+          bindKey: { win: 'Ctrl-S', mac: 'Ctrl-S' },
+        }, {
+          name: 'upload',
+          exec: console.log,
+          bindKey: { win: 'Ctrl-O', mac: 'Ctrl-O' },
+        }, {
+          name: 'movelinesup',
+          exec: console.log,
+          multiSelectAction: "forEach",
+          scrollIntoView: "cursor",
+          readOnly: true
+        }, {
+          name: 'movelinesdown',
+          exec: console.log,
+          multiSelectAction: "forEach",
+          scrollIntoView: "cursor",
+          readOnly: true
+        }, {
+          name: 'gotolineend',
+          exec: console.log,
+          multiSelectAction: "forEach",
+          scrollIntoView: "cursor",
+          readOnly: true
+        }, {
+          name: 'gotolinestart',
+          exec: console.log,
+          multiSelectAction: "forEach",
+          scrollIntoView: "cursor",
+          readOnly: true
+        }]
+      document.getElementById('commands').addEventListener('ready', ({ target }) => target.addCommands(commands))
+    </script>
+  </body>
+</html>

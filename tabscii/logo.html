@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#8e24aa">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Tabscii">
+    <meta name="application-name" content="Tabscii">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <!-- https://material.io/tools/color/#!/?view.left=1&view.right=0&primary.color=8E24AA&secondary.color=FFEB3B -->
+    <button type="button" onclick="replace()">Replace Favicon</button>
+    <h2 onclick="update()">Canvas</h2>
+    <canvas id="canvas"></canvas>
+    <h2>SVG</h2>
+    <!-- <svg id="svg" fill="#8E24AA" xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 8 8">
+        <path mask="url(#t)" d="M 4 8 A 8 8 0 0 1 0 1 A 8.5 8.5 0 0 1 8 1 A 8 8 0 0 1 4 8"></path>
+        <defs>
+            <mask id="t">
+                <rect fill="white" x="0" y="0" height="8" width="8"></rect>
+                <rect fill="black" x="0" y="1" height="1" width="8"></rect>
+                <rect fill="black" x="4" y="1" height="7" width="1"></rect>
+            </mask>
+        </defs>
+    </svg> -->
+    <!-- <svg id="svg" fill="#8E24AA" xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 16 16">
+        <path mask="url(#t)" d="M 8 16
+            A 16 16 0 0 1 0  2
+            A 17 17 0 0 1 16 2
+            A 16 16 0 0 1 8 16
+        "></path>
+        <defs>
+            <mask id="t">
+                <rect fill="white" x="0" y="0" height="16" width="16"></rect>
+                <rect fill="black" x="0" y="2" height="2"  width="16"></rect>
+                <rect fill="black" x="8" y="2" height="14" width="2" ></rect>
+            </mask>
+        </defs>
+    </svg> -->
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 2 2">
+        <style>
+            #svg {
+                width: 512px;
+            }
+            @keyframes path {
+                from {
+                    fill: white;
+                }
+                to {
+                    fill: black:
+                }
+            }
+            @keyframes horizontal {
+                0% {
+                    fill: #AAA;
+                    d: path("M 0 2 v 0.268 h 2 v -0.268 z");
+                }
+                50% {
+                    fill: #333;
+                    d: path("M 0 0 v 0.268 h 2 v -0.268 z");
+                }
+                100% {
+                    fill: black;
+                    d: path("M 0 0.268 v 0.268 h 2 v -0.268 z");
+                }
+            }
+            @keyframes vertical {
+                0% {
+                    fill: #AAA;
+                    d: path("M -0.268 0.268 V 2 h 0.268 V 0.268 z");
+                }
+                50% {
+                    fill: #555;
+                    d: path("M 2 0.268 V 2 h 0.268 V 0.268 z");
+                }
+                100% {
+                    fill: black;
+                    d: path("M 1 0.268 V 2 h 0.268 V 0.268 z");
+                }
+    
+            }
+            @keyframes triangle {
+                from {
+                    fill: white;
+                    transform: translate(0.5px, 0.5px) scale(0.5, 0.5);
+                    /* d: path("m 1,2 a 10 10 0,0,0 1 -1.732 a 10 10 0,0,0 -2 0 a 10 10 0,0,0 1 1.732 z"); */
+                    d: path("m 1,2 \
+                        a 10 10 1,0,0 1 -1.732 \
+                        a 10 10 1,0,0 -2 0 \
+                        a 10 10 1,0,0 1 1.732 \
+                        z");
+                }
+                to {
+                    fill: #8E24AA;
+                    transform: scale(1, 1);
+                    d: path("m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z");
+                }
+            }
+            #horizontal {
+                <!-- fill: black; -->
+                <!-- d: path("M 0 0.268 v 0.268 h 2 v -0.268 z"); -->
+            }
+            #vertical {
+                <!-- fill: black; -->
+                <!-- d: path("M 1 0.268 V 2 h 0.268 V 0.268 z"); -->
+            }
+            #triangle {
+                <!-- fill: #8E24AA;
+                mask: url(#t);
+                d: path("m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z"); -->
+            }
+            #svg:hover #horizontal {
+                animation: horizontal 2s ease forwards infinite alternate;
+            }
+            #svg:hover #vertical {
+                animation: vertical 2s ease forwards infinite alternate;
+            }
+            #svg:hover #triangle {
+                animation: triangle 2s ease forwards infinite alternate;
+            }
+        </style>
+        <path id="triangle" fill="#8E24AA" mask="url(#t)" d="m 1,2 a 2,2 0,0,0 1 -1.732 a 2,2 0,0,0 -2 0 a 2,2 0,0,0 1 1.732 z"></path>
+        <defs>
+            <mask id="t">
+                <rect fill="white" height="100%" width="100%"></rect>
+                <path id="horizontal" d="M 0 0.268 v 0.268 h 2 v -0.268 z"></path>
+                <path id="vertical" d="M 1 0.268 V 2 h 0.268 V 0.268 z"></path>
+            </mask>
+        </defs>
+    </svg>
+    <script>
+    
+      function update() {
+        let svg = document.getElementById('svg');
+        let serializer = new XMLSerializer();
+        let source = serializer.serializeToString(svg);
+        
+        //add name spaces.
+        if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+            source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+        }
+        if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+            source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+        }
+        
+        //add xml declaration
+        source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+        
+            
+        let canvas = document.getElementById('canvas');
+        canvas.setAttribute('height', svg.height.baseVal.value);
+        canvas.setAttribute('width', svg.width.baseVal.value);
+        
+        let ctx = canvas.getContext('2d');
+        let img = new Image();
+        img.onload = function() {
+          ctx.drawImage(img, 0, 0);
+        }
+        img.src = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
+        replace(canvas.toDataURL())
+        console.log(canvas.toDataURL())
+        // console.log(img.src)
+      }
+      
+      update();
+      
+      function replace() {
+        const href = document.getElementById('canvas').toDataURL();
+        console.log('replace', { href })
+        var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'shortcut icon';
+        link.href = href;
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+      
+    </script>
+  </body>
+</html>

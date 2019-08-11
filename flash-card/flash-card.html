@@ -1,0 +1,163 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+<link rel="import" href="../iron-collapse/iron-collapse.html">
+<link rel="import" href="../iron-swipeable-container/iron-swipeable-container.html">
+
+<dom-module id="flash-card">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      paper-card {
+        width: 100%;
+        user-select: none;
+        cursor: default;
+      }
+      #answer paper-button {
+        color: white;
+      }
+      #fail {
+        background-color: var(--paper-red-500);
+      }
+      #fail:hover {
+        background-color: var(--paper-red-100);
+      }
+      #pass {
+        background-color: var(--paper-green-500);
+        float: right;
+      }
+      #pass:hover {
+        background-color: var(--paper-green-100);
+      }
+      paper-icon-button[icon="help"] {
+        float: right;
+      }
+
+    </style>
+    <paper-card id="card">
+      <div class="card-header">
+        {{score}}
+      </div>
+      <div class="card-content">
+        <template is="dom-if" if="{{note.2}}">
+          <paper-icon-button icon="help" on-click="suggest"></paper-icon-button>
+        </template>
+        <slot>
+          
+        </slot>
+        <iron-collapse id="question">
+          <slot name="question">
+            <p>{{note.1}}</p>
+          </slot>
+        </iron-collapse>
+        <iron-collapse id="solution">
+          <slot name="solution">
+            <p>{{note.2}}</p>
+          </slot>
+        </iron-collapse>
+      </div>
+      <div class="card-actions">
+        <slot name="actions">
+          <iron-collapse id="show">
+            <paper-button toggles on-tap="show">Reveal</paper-button>
+          </iron-collapse>
+          <iron-collapse id="answer">
+            <paper-button id="fail" on-tap="fail" raised>Wrong</paper-button>
+            <paper-button id="pass" on-tap="pass" raised>Right</paper-button>
+          </iron-collapse>
+        </slot>
+      </div>
+    </paper-card>
+    <paper-toast id="hint">
+      <slot name="hint">
+        {{note.0}}
+      </slot>
+    </paper-toast>
+  </template>
+  <script>
+    /**
+     * `flash-card`
+     *
+     * There are 3 states in which the card can be:
+     *  - Hiding: question, solution, reveal and answer are shut
+     *  - Asking: question and reveal open
+     *  - Revealing: question, solution and answer are open, reveal shut
+     *  - Reviewing: question and answer are open, reveal and answer are shut
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FlashCard extends Polymer.Element {
+      
+      static get is() { return 'flash-card'; }
+      
+      static get properties() {
+        return {
+          
+          index: {
+            type: Number,
+          },
+          
+          note: {
+            type: Array,
+          },
+          
+          score: {
+            type: Number,
+            value: 1,
+          },
+          
+        };
+      }
+      
+      hide() {
+        console.log('hide');
+        this.fire('hide', [], ['question', 'solution', 'show', 'answer'])
+      }
+      
+      open() {
+        console.log('open');
+        this.fire('open', ['question', 'show'])
+      }
+      
+      show() {
+        console.log('show');
+        this.fire('show', ['solution', 'answer'], ['show'])
+      }
+      
+      hint() {
+        console.log('hint');
+        this.fire('hint', ['hint']);
+      }
+      
+      pass() {
+        console.log('pass');
+        this.fire('pass', [], ['question', 'solution', 'show', 'answer'])
+      }
+      
+      fail() {
+        console.log('fail');
+        this.fire('fail', [], ['question', 'solution', 'show', 'answer'])
+      }
+      
+      fire(name, show = [], hide = [], detail = {}) {
+        console.log('fire', {
+          node: this,
+          name, show, hide
+        })
+        show.map(id => this.$[id].show());
+        hide.map(id => this.$[id].hide());
+        this.dispatchEvent(new CustomEvent(name, { detail }));
+      }
+      
+    }
+    window.customElements.define(FlashCard.is, FlashCard);
+  </script>
+</dom-module>
