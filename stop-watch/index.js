@@ -1,7 +1,4 @@
-import {
-  LitElement,
-  html
-} from './dist/modules.js';
+import { LitElement, html } from 'lit-element';
 
 export default class StopWatch extends LitElement {
 

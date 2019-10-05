@@ -11,6 +11,16 @@
         margin: 24px;
       }
     </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "lit-element": "https://unpkg.com/lit-element?module",
+          "ace-builds": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ace.js?module",
+          "ace-builds/src-min-noconflict/ext-language_tools.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ext-language_tools.js?module",
+          "ace-builds/src-min-noconflict/snippets/snippets.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/snippets/snippets.js?module"
+        }
+      }
+    </script>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@next/webcomponents-loader.js"></script>
   </head>
   <body>
@@ -77,7 +87,7 @@
           scrollIntoView: "cursor",
           readOnly: true
         }]
-      document.getElementById('commands').addEventListener('ready', ({ target }) => target.addCommands(commands))
+//       document.getElementById('commands').addEventListener('ready', ({ target }) => target.addCommands(commands))
     </script>
   </body>
 </html>

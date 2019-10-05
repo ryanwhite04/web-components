@@ -15,10 +15,5 @@
     "@polymer/paper-card": "^3.0.1",
     "@polymer/paper-toast": "^3.0.1",
     "firebase": "^5.7.2"
-  },
-  "devDependencies": {
-    "rollup": "^1.0.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-pnp-resolve": "^1.0.1"
   }
 }

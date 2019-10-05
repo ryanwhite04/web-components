@@ -1,4 +1,7 @@
-import { LitElement, html } from './dist/modules.js';
+import 'ace-builds'
+import 'ace-builds/src-min-noconflict/ext-language_tools.js'
+import 'ace-builds/src-min-noconflict/snippets/snippets.js'
+import { LitElement, html } from 'lit-element'
 
 function dedent(string) {
   let lengths = string.split("\n").map(l => l.match(/^(\s+)\S+/)).filter(m => m).map(m => m[1].length)

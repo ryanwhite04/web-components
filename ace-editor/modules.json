@@ -1,6 +1,8 @@
 {
-    "@polymer/lit-element": "https://unpkg.com/@polymer/lit-elements?module",
+  "imports": {
+    "lit-element": "https://unpkg.com/lit-element?module",
     "ace-builds": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ace.js?module",
     "ace-builds/src-min-noconflict/ext-language_tools.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ext-language_tools.js?module",
     "ace-builds/src-min-noconflict/snippets/snippets.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/snippets/snippets.js?module"
   }
+}

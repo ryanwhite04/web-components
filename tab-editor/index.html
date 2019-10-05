@@ -16,17 +16,31 @@
         --paper-toast-color: var(--paper-red-500);
       }
     </style>
-<!--     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.0/webcomponents-loader.js"></script> -->
+    <script type="importmap">
+      {
+        "imports": {
+          "lit-element": "https://unpkg.com/lit-element?module",
+          "firebase": "https://unpkg.com/firebase?module",
+          "ace-editor": "../ace-editor/index.js",
+          "mwc-fab": "https://unpkg.com/@material/mwc-fab/mwc-fab.js?module",
+          "ace-builds": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ace.js?module",
+          "ace-builds/src-min-noconflict/ext-language_tools.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ext-language_tools.js?module",
+          "ace-builds/src-min-noconflict/snippets/snippets.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/snippets/snippets.js?module"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.0/webcomponents-loader.js"></script>
   </head>
   <body>
-<!--     <script src="https://unpkg.com/@polymer/paper-toast@3.0.0-pre.21/paper-toast.js?module" type="module"></script> -->
+    <script src="https://unpkg.com/@polymer/paper-toast@3.0.0-pre.21/paper-toast.js?module" type="module"></script>
     <script src="index.js" type="module"></script>
-    <tab-editor src="./files/Gametabs/AriaRianata/Roxa's Theme.txt">Loading...</tab-editor>
-    <tab-editor src="./files/Gametabs/AriaRianata/Xion's Theme.txt">Loading...</tab-editor>
+    <tab-editor controls src="/files/Gametabs/AriaRianata/Roxa's Theme.txt">Loading...</tab-editor>
+    <tab-editor src="/files/Gametabs/AriaRianata/Xion's Theme.txt">Loading...</tab-editor>
     <tab-editor save="foo">foo bar</tab-editor>
-<!--     <paper-toast id="toast"></paper-toast> -->
+    <paper-toast id="toast"></paper-toast>
     <script type="module">
-//         [...document.getElementsByTagName('tab-editor')].forEach(listen(document.getElementById('toast')))
+        [...document.getElementsByTagName('tab-editor')].forEach(listen(document.getElementById('toast')))
 
         function listen(toast) {
           return element => element.addEventListener('message', message(toast))

@@ -1,18 +1,8 @@
-import {
-  aliases,
-  names,
-  families,
-  notes,
-  formats,
-  html,
-  Tone,
-  AceEditor
-} from './dist/modules.js';
-
-console.log({
-  ace, AceEditor
-})
-
+import { aliases, names, families, notes, formats } from './soundfonts.js'
+import Tone from './tone.js'
+import { html } from 'lit-element'
+import 'mwc-fab'
+import AceEditor from 'ace-editor'
 
 const { Players } = Tone();
 
@@ -108,7 +98,6 @@ function exitFullscreen() {
   
 class TabEditor extends AceEditor {
   
-
   static get properties() {
     return {
       paused: { type: Boolean, attribute: true, reflect: true }, // readOnly, returns a booolean indicating whether the element is paused
@@ -158,7 +147,10 @@ class TabEditor extends AceEditor {
   constructor() {
     super();
 
-    ace.config.set('basePath', 'https://unpkg.com/ace-builds/src-min-noconflict');
+//     ace.config.set('basePath', 'https://unpkg.com/ace-builds/src-min-noconflict');
+//     ['base', 'mode', 'theme', 'worker'].map(name => ace.config.set(`${name}Path`, baseurl))
+//     ace.config.set('modePath', './');
+
     this.convert = false;
     this.controls = false;
     this.alt = true;
@@ -188,7 +180,6 @@ class TabEditor extends AceEditor {
     const { editor, save, src } = this;
     let host = this;
     const dom = ace.require("ace/lib/dom");
-
 
     const commands = [{
       name: 'toggle',

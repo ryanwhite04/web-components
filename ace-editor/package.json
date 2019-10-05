@@ -2,33 +2,14 @@
   "name": "ace-editor",
   "version": "1.0.0",
   "description": "Ace Editor Webcomponent built with Lit-Element",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "browser": "index.js",
   "homepage": "https://gitlab.com/ryanwhite04/ace-editor",
   "bugs": "https://github.com/username/ace-editor/issues",
   "repository": {
     "url": "https:gitlab.com/ryanwhite04/ace-editor",
     "type": "git"
   },
-  "files": [
-    "dist/*.js",
-    "index.js"
-  ],
-  "scripts": {
-    "build": "rollup -c",
-    "build:watch": "rollup -cw",
-    "serve": "live-server --watch='index.js'",
-    "test": "live-server --watch='index.js,test/' --open='test/'",
-    "start": "yarn serve & yarn build:watch"
-  },
   "author": "Ryan White",
   "license": "ISC",
-  "devDependencies": {
-    "rollup": "^0.66.3",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-pnp-resolve": "^1.0.1"
-  },
   "installConfig": {
     "pnp": true
   },
