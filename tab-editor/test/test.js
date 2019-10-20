@@ -1,4 +1,4 @@
-import Parser from '../parser.js'
+import Tab from '../parse.js'
 import tests from './tests.js'
 
 describe('Parser', () => {
@@ -9,12 +9,13 @@ describe('Parser', () => {
       context(file, function() {
         
         // Just make sure the text file is ready
-        let value;
+        let tab;
         before(async () => {
-          value = await fetch(`../files/${this.title}.txt`)
+          tab = await fetch(`../../files/${this.title}.txt`)
             .then(file => file.text())
-            .catch(console.error)
-          console.log('Parser', this.title, new Parser(value).parse())
+            .then(text => new Tab(text))
+            .catch(console.error);
+          console.log('Parser', this.title, tab)
         })
         
         // Run a test for each condition on each position specified in tests.js
@@ -24,8 +25,7 @@ describe('Parser', () => {
             describe(`Row: ${position.row}, Column: ${position.column}`, () => {
               Object.entries(conditions).map(([func, expectation]) => {
                 it(func, () => {
-                  let parser = new Parser(value)
-                  chai.expect(parser[func](position)).to.eql(expectation)
+                  chai.expect(tab[func](position)).to.eql(expectation)
                 })
               })
             })

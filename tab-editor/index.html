@@ -35,9 +35,10 @@
   <body>
     <script src="https://unpkg.com/@polymer/paper-toast@3.0.0-pre.21/paper-toast.js?module" type="module"></script>
     <script src="index.js" type="module"></script>
-    <tab-editor controls src="/files/Gametabs/AriaRianata/Roxa's Theme.txt">Loading...</tab-editor>
+    <!-- <tab-editor controls src="/files/Gametabs/AriaRianata/Roxa's Theme.txt">Loading...</tab-editor> -->
     <tab-editor src="/files/Gametabs/AriaRianata/Xion's Theme.txt">Loading...</tab-editor>
     <tab-editor save="foo">foo bar</tab-editor>
+    <tab-editor save="parsetest">BLablabla</tab-editor>
     <paper-toast id="toast"></paper-toast>
     <script type="module">
         [...document.getElementsByTagName('tab-editor')].forEach(listen(document.getElementById('toast')))

@@ -2,12 +2,6 @@
   "name": "ace-editor",
   "version": "1.0.0",
   "description": "Ace Editor Webcomponent built with Lit-Element",
-  "homepage": "https://gitlab.com/ryanwhite04/ace-editor",
-  "bugs": "https://github.com/username/ace-editor/issues",
-  "repository": {
-    "url": "https:gitlab.com/ryanwhite04/ace-editor",
-    "type": "git"
-  },
   "author": "Ryan White",
   "license": "ISC",
   "installConfig": {

@@ -6,14 +6,11 @@
   "installConfig": {
     "pnp": true
   },
-  "resolutions": {
-    "firebase/whatwg-fetch": "3.0.0"
-  },
   "dependencies": {
     "@polymer/lit-element": "^0.6.5",
     "@polymer/paper-button": "^3.0.1",
     "@polymer/paper-card": "^3.0.1",
     "@polymer/paper-toast": "^3.0.1",
-    "firebase": "^5.7.2"
+    "firebase": "^7.2.0"
   }
 }

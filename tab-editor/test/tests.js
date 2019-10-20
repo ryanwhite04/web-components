@@ -5,7 +5,7 @@ export default [
   tests: [
     {
       position: { row: 12, column: 11 },
-      getOpenStringNote: 38,
+      getOpen: 38,
       getNote: 39
     },
     {
@@ -14,12 +14,12 @@ export default [
       getLastSibling: 16,
       getPreviousSiblings: [11, 12],
       getLine: 'G4 |-------0-------|-------0-------|',
-      getOpenStringNote: 34,
+      getOpen: 34,
       getNote: 34
     },
     {
       position: { row: 14, column: 11 },
-      getOpenStringNote: 29,
+      getOpen: 29,
       getNote: false
     },
     {
@@ -43,6 +43,7 @@ export default [
 },
 
 {
+  ignore: true,
   file: 'Guitar Pro/All of them Witches',
   tests: [
     {
@@ -54,6 +55,7 @@ export default [
 },
 
 {
+  ignore: true,
   file: 'Guitar Pro/Anatole',
   tests: [ {
     position: { row: 10, column: 10 },
@@ -65,6 +67,7 @@ export default [
 },
 
 {
+  ignore: true,
   file: 'Tabscii/The Judge',
   tests: [
     {

@@ -1,0 +1,11 @@
+{
+    "imports": {
+        "lit-element": "https://unpkg.com/lit-element?module",
+        "firebase": "https://unpkg.com/firebase?module",
+        "ace-editor": "../ace-editor/index.js",
+        "mwc-fab": "https://unpkg.com/@material/mwc-fab/mwc-fab.js?module",
+        "ace-builds": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ace.js?module",
+        "ace-builds/src-min-noconflict/ext-language_tools.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/ext-language_tools.js?module",
+        "ace-builds/src-min-noconflict/snippets/snippets.js": "https://unpkg.com/ace-builds@1.4.1/src-noconflict/snippets/snippets.js?module"
+    }
+}

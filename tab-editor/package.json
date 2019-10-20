@@ -7,9 +7,9 @@
   "license": "ISC",
   "dependencies": {
     "@material/mwc-fab": "^0.8.0",
-    "lit-element": "^2.2.1",
-    "ace-editor": "https://gitlab.com/ryanwhite04/ace-editor",
-    "firebase": "^6.6.0"
+    "ace-editor": "workspace:*",
+    "firebase": "^6.6.0",
+    "lit-element": "^2.2.1"
   },
   "installConfig": {
     "pnp": true

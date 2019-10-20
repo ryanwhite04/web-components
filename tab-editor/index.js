@@ -146,11 +146,12 @@ class TabEditor extends AceEditor {
   
   constructor() {
     super();
-
+    
+    console.log('tab-editor url', import.meta.url.split('/').slice(0, -1).join('/') + "/");
 //     ace.config.set('basePath', 'https://unpkg.com/ace-builds/src-min-noconflict');
 //     ['base', 'mode', 'theme', 'worker'].map(name => ace.config.set(`${name}Path`, baseurl))
 //     ace.config.set('modePath', './');
-
+    ace.config.setModuleUrl("ace/snippets/tab", import.meta.url.split('/').slice(0, -1).join('/') + "/");
     this.convert = false;
     this.controls = false;
     this.alt = true;
@@ -158,7 +159,9 @@ class TabEditor extends AceEditor {
     this.parsed = false;
     this.paused = true;
     this.fullscreen = false;
-    this.worker = new Worker(new URL('worker.js', import.meta.url).pathname);
+    this.worker = new Worker(new URL('worker.js', import.meta.url).pathname, {
+      type: "module",
+    });
     this.instruments = ['Guitar']
 
     collection.load = async (id) => {

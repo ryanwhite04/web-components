@@ -129,6 +129,7 @@ export default class AceEditor extends LitElement {
     console.log({
       meta: import.meta,
       url: import.meta.url,
+      baseurl: new URL('ace', import.meta.url).pathname,
     })
 //     this.baseurl = new URL('ace', import.meta.url).pathname;
   }
