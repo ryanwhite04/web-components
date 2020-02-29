@@ -9,7 +9,7 @@
 
 import parse from "./parse.js";
 import toml from "./toml.js";
-import "./yaml.js";
+// import "./yaml.js";
 // import * as yaml from "https://unpkg.com/yaml@1.7.0/browser/dist/index.js?module";
 // import yaml from "https://unpkg.com/yaml-with-import@1.0.6/src/yaml-with-import.js?module";
 // const yaml = (value, onWarning) => jsyaml.safeLoad(value, { onWarning, json: true })

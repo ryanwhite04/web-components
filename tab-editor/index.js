@@ -1,3 +1,4 @@
+
 import { aliases, names, families, notes, formats } from './soundfonts.js'
 import Tone from './tone.js'
 import { html } from 'lit-element'
@@ -260,7 +261,7 @@ class TabEditor extends AceEditor {
     })
     
 	ace.config.setModuleUrl("ace/mode/tab", new URL("mode.js", import.meta.url).pathname);
-    editor.session.setMode('ace/mode/tab')
+//     editor.session.setMode('ace/mode/tab')
     editor.setOptions({
       firstLineNumber: 0,
       enableSnippets: true,
@@ -297,7 +298,9 @@ class TabEditor extends AceEditor {
     if (src) {
       await this.load(src)
     } else if (save) {
-      localStorage.hasOwnProperty(save) && loadSession(editor.session, save)
+      if (localStorage.hasOwnProperty(save)) {
+//         loadSession(editor.session, save);
+      }
     }
 
     editor.on('change', debounced)

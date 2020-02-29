@@ -716,7 +716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@material/mwc-icon@npm:^0.3.4, @material/mwc-icon@npm:^0.3.6":
+"@material/mwc-icon@npm:^0.3.6":
   version: 0.3.6
   resolution: "@material/mwc-icon@npm:0.3.6"
   dependencies:
@@ -871,18 +871,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-autogrow-textarea@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-autogrow-textarea@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-flex-layout": "npm:^3.0.0-pre.26"
-    "@polymer/iron-validatable-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: bbde53e233b7cbcba64168e6215caf8b2bdf0083e9d71e36cbb4632fd6e5f24db1629ca26b6a2ee8cf7c877dc6ac0397b20e0a26bddfabe06693d3085b50a7b1
-  languageName: node
-  linkType: hard
-
 "@polymer/iron-behaviors@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-behaviors@npm:3.0.1"
@@ -901,28 +889,6 @@ __metadata:
     "@polymer/iron-validatable-behavior": "npm:^3.0.0-pre.26"
     "@polymer/polymer": "npm:^3.0.0"
   checksum: ca15e29a19dbdb95ebc0793c9a07041ac6025fe09600c74f8621e16af59eb86f0be1b6d1472d14f3f23ce527cbbba9b9a5fbbba6b24d4d4a168ee919693668c0
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-collapse@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/iron-collapse@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-resizable-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 5099865ffde7c6f6c12895d212947a0d992d103af48e4580af073d913ad04d989b5479adfdecd2f31cbfd4b40353831f1562810e007b90152dff90083172c00a
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-dropdown@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-dropdown@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-overlay-behavior": "npm:^3.0.0-pre.27"
-    "@polymer/neon-animation": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: fd1500656fc48f288a3d293554f46b129791a7457071c0c3cd3c0475762288991909291541a0dfd28033f625b151712bf5068f009946fd7ab67fa800d0f93a97
   languageName: node
   linkType: hard
 
@@ -994,29 +960,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-input@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-input@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-announcer": "npm:^3.0.0-pre.26"
-    "@polymer/iron-validatable-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 2f0ec500b81873a1d0cd643d3ba685c2521f2b4fac6d256d06db86748df9c959ea494072a3340d0418b1e1e8e7a166987f798513ad32190498970806e1c90267
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-menu-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.2
-  resolution: "@polymer/iron-menu-behavior@npm:3.0.2"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-flex-layout": "npm:^3.0.0-pre.26"
-    "@polymer/iron-selector": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 8940a500eddbc51386e5b8e5e13d70ac4429527892810e75219068e8899fb11310fe7ffdc97ab966258cdf97f890e43f6fade85863ae04468d8c93ab01950ed3
-  languageName: node
-  linkType: hard
-
 "@polymer/iron-meta@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-meta@npm:3.0.1"
@@ -1038,30 +981,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-range-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-range-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 0c044ad5c442a9f94913412bde23b108fd63ac8a601d29de40c082a5c3d0e339432aa6412029c0bf2bb01f0f545fa4a177d0e421d88c27fdba2acfb6ec4652ba
-  languageName: node
-  linkType: hard
-
 "@polymer/iron-resizable-behavior@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-resizable-behavior@npm:3.0.1"
   dependencies:
     "@polymer/polymer": "npm:^3.0.0"
   checksum: 8fe5d8f97954dd2fd1850955f1e12108c961c84c26b4c493010123a83e9dfc79a8e636a97d2f5d861a87ec1b032cee5d1e7e491987e6cc885ee007022cbb4081
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-selector@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-selector@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: af3d6255417844e141bed9f97c7c2d876d1ca6e1e69a840c2d821c744e41a50628ac21203a22dacc64adcebd5f981cf1e925e364d062d1afa89bf436b2dde2c2
   languageName: node
   linkType: hard
 
@@ -1081,17 +1006,6 @@ __metadata:
   dependencies:
     lit-html: "npm:^1.0.0-rc.1"
   checksum: 1ce3aa805068ccd27215336f55d0154ac990a61978fbb731d933e7bceaaf1bb567c0697b455392352327f180a4389d4593121753738d9cbb69b0b13eaf533105
-  languageName: node
-  linkType: hard
-
-"@polymer/neon-animation@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/neon-animation@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-resizable-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-selector": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 520ebba065fa905e078c0c85f0556fa8db3584c369cfd74083ef84fa039a2717452aa995f7927e291e90632f0f51274a46eb501bc10907d6feaf4ec8f5ccddc1
   languageName: node
   linkType: hard
 
@@ -1131,25 +1045,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/paper-dropdown-menu@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-dropdown-menu@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-form-element-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-icon": "npm:^3.0.0-pre.26"
-    "@polymer/iron-iconset-svg": "npm:^3.0.0-pre.26"
-    "@polymer/iron-validatable-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/paper-behaviors": "npm:^3.0.0-pre.27"
-    "@polymer/paper-input": "npm:^3.0.0-pre.26"
-    "@polymer/paper-menu-button": "npm:^3.0.0-pre.26"
-    "@polymer/paper-ripple": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 9d614d7a8f7374487259a92cba21266da1aa778f274ba181e947a7fc7f84506e8dc9bcecf311004ea008eaf42efc3d4ea1fc51de061df981c08708b6c0a38332
-  languageName: node
-  linkType: hard
-
 "@polymer/paper-fab@npm:^3.0.1":
   version: 3.0.1
   resolution: "@polymer/paper-fab@npm:3.0.1"
@@ -1163,72 +1058,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/paper-input@npm:^3.0.0-pre.26, @polymer/paper-input@npm:^3.0.1":
-  version: 3.0.2
-  resolution: "@polymer/paper-input@npm:3.0.2"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-autogrow-textarea": "npm:^3.0.0-pre.26"
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-form-element-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-input": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 9ef69eeef42ba2f5f3889dfee4f0950edd1dde1d805a26e711500e0243341de0b55b5abdc8b85c76dd984f36fcd8627c88829721f6821ca27446143c8cd6401f
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-item@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-item@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-flex-layout": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 3a550b52177d940ecb118c1557d3ed7809a835b947d27fcde00649923b1b05fade5318edd4a1d43145d93b116efd1cfc51b3cc18b2ba3ab71b02b471819ba969
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-listbox@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-listbox@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-menu-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 04a9fa33b1be6bed09ac4d7798933b4eb58e99d3c216cb525d056bbf3f7a653dae0829907215f053ecf684e0b98cb8ec3a89c0f690ee6105d0e1cb585daf8a3e
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-menu-button@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/paper-menu-button@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-dropdown": "npm:^3.0.0-pre.26"
-    "@polymer/iron-fit-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/neon-animation": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 700fb5b241d26524d74d8f063afa85d8bebfa19e84a5f462908d24c9a7b2e4037bceb6f8e2cc8bf739650fd25c823d4a61755984fca3dff5197231db15cbc618
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-progress@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/paper-progress@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-flex-layout": "npm:^3.0.0-pre.26"
-    "@polymer/iron-range-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 5d03bbc52ce5be7a1e1b61cb009bc41342175227654cab5e4664f857e8bae43154a111ebd1ffa5cc7968e041c4ec3877cdde128bafa86087bfee18f576611e85
-  languageName: node
-  linkType: hard
-
 "@polymer/paper-ripple@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/paper-ripple@npm:3.0.1"
@@ -1236,23 +1065,6 @@ __metadata:
     "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
     "@polymer/polymer": "npm:^3.0.0"
   checksum: 64ec05b714abde6e90e1df4bc5954fc09ab6343811ae692ead9da44f7a408bb11d15bfc6bf598a0ab0449d876a748defebfc48b455e698fee29f78b1bb24fff5
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-slider@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "@polymer/paper-slider@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/iron-behaviors": "npm:^3.0.0-pre.26"
-    "@polymer/iron-flex-layout": "npm:^3.0.0-pre.26"
-    "@polymer/iron-form-element-behavior": "npm:^3.0.0-pre.26"
-    "@polymer/paper-behaviors": "npm:^3.0.0-pre.27"
-    "@polymer/paper-input": "npm:^3.0.0-pre.26"
-    "@polymer/paper-progress": "npm:^3.0.0-pre.26"
-    "@polymer/paper-styles": "npm:^3.0.0-pre.26"
-    "@polymer/polymer": "npm:^3.0.0"
-  checksum: 83dd0d4a21ead8b822a25fa14f9a597ab7eb6f8efdce86df27611d9c6014020f023fa497bfc761f916a72bb6e2002c0c3beb66199e5abf7274a8206856f9579d
   languageName: node
   linkType: hard
 
@@ -1703,7 +1515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-rain@workspace:emoji-rain, emoji-rain@workspaces:*":
+"emoji-rain@workspace:emoji-rain":
   version: 0.0.0-use.local
   resolution: "emoji-rain@workspace:emoji-rain"
   dependencies:
@@ -2185,30 +1997,6 @@ __metadata:
   checksum: 15bb3af5671d0b795fcf1ffb04b2274e7c54af5941c8917ffda14ec3790ebc0c75939ea5ef143ef9d336f259ef3513084a555260adbcc8b324244b5615002d72
   languageName: node
   linkType: hard
-
-"mine-sweeper@workspace:mine-sweeper":
-  version: 0.0.0-use.local
-  resolution: "mine-sweeper@workspace:mine-sweeper"
-  dependencies:
-    "@material/mwc-button": "npm:^0.3.4"
-    "@material/mwc-fab": "npm:^0.3.4"
-    "@material/mwc-icon": "npm:^0.3.4"
-    "@polymer/iron-collapse": "npm:^3.0.1"
-    "@polymer/iron-icons": "npm:^3.0.1"
-    "@polymer/lit-element": "npm:^0.6.5"
-    "@polymer/paper-button": "npm:^3.0.1"
-    "@polymer/paper-card": "npm:^3.0.1"
-    "@polymer/paper-dropdown-menu": "npm:^3.0.1"
-    "@polymer/paper-fab": "npm:^3.0.1"
-    "@polymer/paper-input": "npm:^3.0.1"
-    "@polymer/paper-item": "npm:^3.0.1"
-    "@polymer/paper-listbox": "npm:^3.0.1"
-    "@polymer/paper-slider": "npm:^3.0.0"
-    "@polymer/paper-toast": "npm:^3.0.1"
-    emoji-rain: "workspaces:*"
-    stop-watch: "workspaces:*"
-  languageName: unknown
-  linkType: soft
 
 "minimatch@npm:^3.0.4":
   version: 3.0.4
@@ -2708,7 +2496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stop-watch@workspace:stop-watch, stop-watch@workspaces:*":
+"stop-watch@workspace:stop-watch":
   version: 0.0.0-use.local
   resolution: "stop-watch@workspace:stop-watch"
   dependencies:

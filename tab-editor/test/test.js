@@ -25,6 +25,7 @@ describe('Parser', () => {
             describe(`Row: ${position.row}, Column: ${position.column}`, () => {
               Object.entries(conditions).map(([func, expectation]) => {
                 it(func, () => {
+                  console.log({ func });
                   chai.expect(tab[func](position)).to.eql(expectation)
                 })
               })
