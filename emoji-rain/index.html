@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <style>
     emoji-rain {
       position:absolute;
@@ -8,18 +9,11 @@
       left:0;
     }
   </style>
-  <script type="importmap">
-    {
-      "imports": {
-        "lit-element": "https://unpkg.com/lit-element?module"
-      }
-    }
-  </script>
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.0/webcomponents-loader.js"></script>
 </head>
 <body style="position: relative; margin: 0; padding: 0;">
-  <script type="module" src="index.js"></script> 
-  <emoji-rain speed="5" volume="20" emojis="A"></emoji-rain>
+  <script type="module" src="emoji-rain.js"></script>
+  <emoji-rain speed="2" volume="20" emojis='["✨","🏆"]'></emoji-rain>
   <div style="position: relative; width: 300px; height: 300px; background: #008800;">
     <emoji-rain speed="5" volume="20" emojis="B"></emoji-rain>
     <button type="button">Button 1</button>

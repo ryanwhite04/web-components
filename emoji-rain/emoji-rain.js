@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 */
 
-import { LitElement, html } from 'lit-element';
+import { LitElement, css, html } from 'https://cdn.pika.dev/lit-element';
 
 /**
 * Unborks the canvas pixel ratio on retina screens.
@@ -88,10 +88,7 @@ export default class EmojiRain extends LitElement {
       power: { type: Number, reflect: true },
       size: { type: Number, reflect: true },
       paused: { type: Boolean, reflect: true },
-      emojis: { type: {
-        fromAttribute: value => value.split(","),
-        toAttribute: value => value.join(","),
-      }, reflect: true },
+      emojis: { type: Array, reflect: true },
     }
   }
 
@@ -272,8 +269,8 @@ export default class EmojiRain extends LitElement {
       this.canvas.height = this.offsetHeight;
   }
 
-  render() {
-    const style = `
+  static get styles() {
+    return css`
       :host {
         display: block;
         position: relative;
@@ -292,11 +289,10 @@ export default class EmojiRain extends LitElement {
         position: relative;
       }
     `;
-    return html`
-    <style>${style}</style>
-    ${this.canvas}
-    <slot></slot>
-    `;
+  }
+
+  render() {
+    return html`${this.canvas}<slot></slot>`;
   }
 
 }

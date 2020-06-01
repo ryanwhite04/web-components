@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from './modules.js';
 
 export default class StopWatch extends LitElement {
 
@@ -68,7 +68,8 @@ export default class StopWatch extends LitElement {
   click(e) { this.disabled || (this.paused ? this.start() : this.stop()) }
 
   get label() {
-    return `${Math.floor(this.time/1000).toString()}.${(this.time%1000).toString()[0].padStart(1, "0")}`;
+    return `${Math.floor(this.time/1000).toString()}.${(this.time%1000)
+      .toString()[0].padStart(1, "0")}`;
   }
 
   render() {
@@ -85,9 +86,8 @@ export default class StopWatch extends LitElement {
       ?raised=${raised}
       ?disabled=${disabled}
       icon=${icon}
-      @click=${click}
-      >
-      ${label}
+      @click=${click}>
+        ${label}
     </mwc-button>`;
   }
 
