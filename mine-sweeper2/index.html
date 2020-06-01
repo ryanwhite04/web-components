@@ -1,0 +1,74 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mine Sweeper</title>
+
+  <!-- Add support for Web Components to older browsers. -->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <!-- Your application must load the Roboto and Material Icons fonts. -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <!-- <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations-next-lite.min.js"></script> -->
+  <script src="index.js"></script>
+  <script type="module">
+    import 'https://unpkg.com/@polymer/paper-slider/paper-slider.js?module';
+    import 'https://unpkg.com/@polymer/iron-label/iron-label.js?module';
+    // import {MDCSelect} from 'https://unpkg.com/@material/select/index.js?module';
+    // const select = new MDCSelect(document.querySelector('.mdc-select'));
+  </script>
+</head>
+<body>
+  <script type="module" src="mine-sweeper.js"></script>
+  <div id="demos">
+    <div class="demo">
+      <h2>Default</h2>
+      <mine-sweeper></mine-sweeper>
+    </div>
+    <div class="demo">
+      <h2>With Settings</h2>
+      <mine-sweeper id="game" rows="8" columns="8" difficulty="4">
+        <div class="mdc-select">
+          <i class="mdc-select__dropdown-icon"></i>
+            <select id="difficulty" required class="mdc-select__native-control">
+              <option value="25">Easy</option>
+              <option value="33" selected>Hard</option>
+              <option value="41">Expert</option>
+              <option value="0">Custom</option>
+            </select>
+            <label class="mdc-floating-label">Difficulty</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
+        <div id="options" hidden>
+          <div>
+             <paper-slider id="rows" min="1" max="32" pin editable></paper-slider>
+             <span>Rows</span>
+          </div>
+          <div>
+            <paper-slider id="columns" min="1" max="32" pin editable></paper-slider>
+            <span>Columns</span>
+          </div>
+          <div>
+            <paper-slider id="mines" min="1" max="32" pin editable></paper-slider>
+            <span>Mines</span>
+          </div>
+        </div>
+      </mine-sweeper>
+    </div>
+    <div class="demo">
+      <h2>4 Rows, 4 Columns, 4 Mines.<h2>
+      <mine-sweeper mini rows="4" columns="4" difficulty="4"></mine-sweeper>
+    </div>
+    <div class="demo">
+      <h2>mini</h2>
+      <mine-sweeper mini></mine-sweeper>
+    </div>
+    <div class="demo">
+      <h2>--accent-color: blue;</h2>
+      <mine-sweeper style="--accent-color: blue"></mine-sweeper>
+    </div>
+  </div>
+</body>
+</html>
